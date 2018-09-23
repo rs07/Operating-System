@@ -1,0 +1,16 @@
+1. dd if=/dev/zero count=10000>>fs.img
+2. qemu-img convert fs.img -O vmdk fs.vmdk
+3. qemu-img convert xv6.img -O vmdk xv6.vmdk
+4. chmod 777 fs.vmdk
+5. chmod 777 xv6.vmdk
+
+
+->openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -nodes -days 36500 -subj "/CN=VMware/"
+->sudo /usr/src/linux-headers-`uname -r`/scripts/sign-file sha256 ./MOK.priv ./MOK.der $(modinfo -n vmmon)
+->sudo /usr/src/linux-headers-`uname -r`/scripts/sign-file sha256 ./MOK.priv ./MOK.der $(modinfo -n vmnet)
+->mokutil --import MOK.der
+
+
+1. Inside xv6/public--- VBoxManage convertdd fs.img fs.vdi
+2. VBoxManage convertdd xv6.img xv6.vdi
+3. 

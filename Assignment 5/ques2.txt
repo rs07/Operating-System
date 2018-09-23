@@ -1,0 +1,40 @@
+------------> Implement of a shared linked list to be accessed by concurrent processes <-----------
+
+
+# Global Description
+	- A shared memory of size "int" (accessible by all) which will only store the previous memory segment "shmid"
+	- A shared memory of size "int"	(accessible by all) which will only store the starting "shmid" of the linked list
+
+
+
+# node description
+	- A integer type variable to store
+	- A pointer which will point to the location of next location and stores the "shmid" of the next memory segment
+		(from which we can get the address of the next shared memory by attaching a pointer to the "shmid")
+
+
+
+# function for adding the node         
+	- For each node we will create a shared memory segment of size "int * 2" 
+		(one for storing it's node value and one for storing the next shared memory address)
+	- attach a pointer to shared memory created for node and put it's node value
+	- attach a pointer to the shared memory "shmid" which is saved in the global shared memory
+	- put the the shmid of this new created meory segment in the address of the global shared memory.
+							
+-------------------->( We will repeat this process each time for creation and adding of the new node in linked list)
+
+
+# function for deleting the node
+	- 3 conditions
+	- # Condition 1: If node deleted will be the first node
+		- Then only check if this node is the value which has to be deleted then only change the "shmid" of the global variable which stores the starting "shmid" to the value which is stored in the second pointer location of this node.
+		- Deallocate the shared memory segment
+
+
+	- # Condition 2: If the deleted node is in between two nodes
+		- Then for each node we will check what is stored in the next node if the next value is to be deleted then take this value in some global variable and then move to the next shared memory segment using a loop which will continue to iterate till it reaches the end.
+		- After storing the previous shmid value in the global variable we moved to the shared memory segment to be deleted then gets it pointer to next shared memory then store this newly get "shmid" to the memory of the previous shared memory got stored in global variable. 
+
+
+	- # Condition 3: If this is the last node
+		- 

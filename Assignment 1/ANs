@@ -1,0 +1,90 @@
+3. Ans- Linux hercules 4.10.0-42-generic #46~16.04.1-Ubuntu SMP Mon Dec 4 15:57:59 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+One can check the kernel of the Linux by using the : uname -a
+
+'uname' for Unix name and '-a' for all
+
+Linux - displays the details about the Kernel name
+
+hercules - displays the network node hostname
+
+4.10.0-42-generic - displays the kernel release
+
+#46~16.04.1-Ubuntu SMP Mon Dec 4 15:57:59 UTC 2017  - displays the kernel version
+
+x86_64- displays the machine hardware name
+
+x86_64- displays the processor type
+
+x86_64- displays the hardware platform
+
+GNU/Linux - displays the OS
+
+5. Ans- I have made a partition of 50000MB from my local drive so it will be approximately about ~49GB. I generally use to prefer Windows over Ubuntu. I only want to use Linux for study purpose so I decided to give it 50GB. According to me it is enough for giving that much to Linux.
+
+10. Ans- Primary partition- It is that partition on which an operating system can be installed.It is a partition which is logically independent division on a HDD. A hard drive can be divided up to 4 primary partition.
+
+Extended partition- Because the primary only can be created four maximum, this need to use extended partition to break the limitation of 4 partitions.
+
+Primary Partition - For installation of multiple operating system we need to do in different primary partitions.
+
+Extended Partition -  In an Extended Partition we can create unlimited logical drives. We can store data in the logical partitions similar with primary partition, but the extended partition is not used to store data, because the Extended Partition is used to hold logical partitions, at the same time, there can only be one extended partition on a single disk.
+
+6.Ans- Device          Start        End   Sectors   Size Type
+
+/dev/sda1        2048    1026047   1024000   500M EFI System
+
+/dev/sda2     1026048    1107967     81920    40M unknown
+
+/dev/sda3     1107968    1370111    262144   128M Microsoft reserved
+
+/dev/sda4     1370112    2906111   1536000   750M Windows recovery environment
+
+/dev/sda5     2906112  559934703 557028592 265.6G Microsoft basic data
+
+/dev/sda6   559935488  561553407   1617920   790M Windows recovery environment
+
+/dev/sda7   561555456  868752822 307197367 146.5G Microsoft basic data
+
+/dev/sda8   971155456 1227155455 256000000 122.1G Microsoft basic data
+
+/dev/sda9  1227155456 1483153407 255997952 122.1G Microsoft basic data
+
+/dev/sda10 1483155456 1691338751 208183296  99.3G Microsoft basic data
+
+/dev/sda11 1691338752 1937098751 245760000 117.2G Microsoft basic data
+
+/dev/sda12 1937100800 1953523119  16422320   7.9G Windows recovery environment
+
+/dev/sda13  868753408  954560511  85807104  40.9G Linux filesystem
+
+/dev/sda14  954560512  971155455  16594944   7.9G Linux swap
+
+
+
+Partition Scheme can be check using the command of the Terminal : fdisk -l 
+
+fdisk - helps us to provide disk partitioning function
+
+-l - print the list 
+
+
+
+I have installed the Linux by partitioning the disk first. I have partitioned the disk in the Window first and then install the Ubuntu on it.
+
+7. Ans- Partition of a Hard Disk means to partition of a one or more region on your hard disk so that the information stored in that region can be used by OS separately. Each partition then appears in the operating system as a distinct "logical" disk that uses part of the actual disk. The disk is described as 'logical'  because it does not actually exist as a single physical entity in its own right. 
+
+8. Ans- People go for partition according to their need. If anyone wants to store the media things (e.g., songs, videos, etc.) they can do the partition of the disk and use to store the media. One can do the partitioning for install different Operating System on the same machine as we have done. Firstly we have done the partition of the disk and then installed Ubuntu on it. If think that if any data is confidential and we have to give it security so we can do a partitioning and encrypt that drive. The big advantage of the partitioning is reducing the threats of the data loss. Just imagine we have stored all files in one drive and if somehow a virus attacks a single file then it will affect the whole drive for that we need to format that drive. And if we have one partition then other data will be lost after formatting.
+
+9. Ans- The maximum number of partitions can be allowed on the hard disk is 4.
+
+Either it may be :-
+
+1. 4 Primary Partitions, or
+
+2. 3 Primary Partitions and 1 extended partitions that can contain any number of logical partitions.
+
+
+11. Ans- SWAP partition in the hard drive partition acts as an overflow to the (RAM) memory. If the memory is filled up completely, any additional applications will be run off of the SWAP partition rather than memory. And the memory space used by the system in swap partition is the SWAP space.
+
+As swap space can help machines with a small amount of RAM but it should not be considered as a replacement for more RAM. Swap space is located on hard drives, which have a slower access time than physical memory. So, it slows the system.
+
